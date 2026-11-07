@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.paperai/
+papers/*
+!papers/.gitkeep
+results/*
+!results/.gitkeep
+pdf-to-markdown/
+DEPLOY_REPORT.md
+*.pdf
+*.onnx
+*.safetensors
+.env*

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paperai"
+version = "0.1.0"
+description = "Local PDF preparation and evidence-bound agent verification"
+requires-python = ">=3.11"
+dependencies = ["pymupdf==2.0", "pymupdf4llm==2.0"]
+license = "AGPL-3.0-or-later"
+
+[project.scripts]
+paperai = "paperai.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["paperai*"]
