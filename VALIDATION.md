@@ -4,7 +4,9 @@
 
 ## 自动测试
 
-本机 Windows 11、Python 3.11.15，独立创建项目环境并安装成功。`python -m unittest discover -s tests -v` 包含9项测试；提供 `PAPERAI_MENG_ROOT` 后本机9项通过。公开CI没有私人样例时，Meng项明确SKIP，其余8项执行。CI矩阵为Windows/Ubuntu 24.04、Python 3.11/3.13；最终执行状态见GitHub Actions，配置不等于已运行通过。
+本机 Windows 11、Python 3.11.15，独立创建项目环境并安装成功。`python -m unittest discover -s tests -v` 包含9项测试；提供 `PAPERAI_MENG_ROOT` 后本机9项通过。公开CI没有私人样例时，Meng项明确SKIP，其余8项执行。[实际CI记录](https://github.com/tangqingxi/PaperAI/actions/runs/42349547254)：Windows/Ubuntu 24.04 × Python 3.11/3.13四组均成功（代码提交`2dfa83413f02080b7434d2c33d12faab5a5abb96`）。
+
+实际从GitHub重新Clone到隔离目录，创建新的Python环境并从该副本安装成功。执行公开测试8项通过、私人Meng项1项明确跳过；默认命令`paperai prepare`成功递归发现中文/空格/大写扩展名PDF。重复命令复用同一结果目录，未创建额外终稿。此Clone测试使用合成PDF，没有把私人论文上传GitHub。
 
 覆盖中文/空格/大小写扩展名/递归发现、多文件中单项失败继续、双栏合成PDF、表格小数、公式/矩阵/分段环境异常、重复编号/越界链接、逐页中断恢复、源文件改变另存结果、修订不被prepare覆盖、证据和原始缓存及新增图片变化使回执失效。合成回执只是状态门禁测试，不是对真实论文的视觉声明。跨页复杂推导和任意符号遗漏仍依赖Agent比对原页。
 

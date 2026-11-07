@@ -32,7 +32,7 @@ python -m paperai finalize results/论文目录
 
 ## 开发
 
-Python 3.11+；本机已测试 Windows 11/Python 3.11，CI 配置 Windows/Ubuntu 24.04 与 Python 3.11/3.13，运行结论以 Actions 记录为准。`python -m unittest discover -s tests -v`。在无论文的环境，合成测试不等于真实论文精度验收。实际测试范围见 [验证记录](VALIDATION.md)。
+Python 3.11+；Windows 与 Ubuntu 24.04、Python 3.11/3.13 的四组 CI 已通过，详见 [验证记录](VALIDATION.md)。`python -m unittest discover -s tests -v`。在无论文的环境，合成测试不等于真实论文精度验收。
 
 当前集成 PyMuPDF/PyMuPDF4LLM 2.0 及其 CPU 布局分析（自动依赖包含 ONNX Runtime）。未集成公式专用 OCR。Docling、Pix2Text、PaddleOCR 等尚未在本项目做精度基准测试，因此没有强制安装重叠模型。执行 Agent 可按需使用已授权的本地识别工具，先裁剪，再对照原页修复；不能把其他引擎输出当真值。
 
