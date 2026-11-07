@@ -40,6 +40,8 @@ def _prepare(source, folder, key):
         if (folder / 'paper.md').exists():
             raise ValueError('结果目录含未关联的 paper.md，拒绝覆盖')
         state = {'signature': signature, 'source': str(source), 'pages': [], 'reviews': {}}
+        # 先绑定依赖签名，避免首轮中断后把不同版本的页缓存混在一起。
+        save(state_file, state)
     with pymupdf.open(source) as doc:
         if doc.needs_pass:
             raise ValueError('PDF已加密，请提供可读取的本地版本')

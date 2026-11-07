@@ -82,6 +82,8 @@ class PipelineTests(unittest.TestCase):
             return real(doc,**kwargs)
         with patch.object(core.pymupdf4llm,'to_markdown',side_effect=fail_second):
             with self.assertRaises(RuntimeError):prepare(self.pdf,self.root/'out')
+        with patch.object(core.importlib.metadata,'version',return_value='changed-version'):
+            with self.assertRaisesRegex(ValueError,'签名变化'):prepare(self.pdf,self.root/'out')
         with patch.object(core.pymupdf4llm,'to_markdown',wraps=real) as call:
             folder=prepare(self.pdf,self.root/'out');self.assertEqual(call.call_count,1)
         crop(folder,1,[40,220,250,290]);prepare(self.pdf,self.root/'out')
