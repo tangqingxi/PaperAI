@@ -38,4 +38,4 @@ Python 3.11+；Windows 与 Ubuntu 24.04、Python 3.11/3.13 的四组 CI 已通�
 
 ## 许可
 
-本项目原创代码为 AGPL-3.0-or-later。PyMuPDF 系列采用 AGPL/商业双许可，参见[官方说明](https://pymupdf.readthedocs.io/en/latest/about.html)。模型权重的许可须单独检查。历史 `pdf-to-markdown` 仓库没有 LICENSE，故没有复制、重新许可或随本仓库分发其代码；本工具直接复用已部署的同版本解析库 API。Docling代码为MIT、Pix2Text代码为MIT，但这些代码许可不自动覆盖各自全部模型，参见[Docling](https://github.com/docling-project/docling)、[Pix2Text](https://github.com/breezedeus/Pix2Text)。
+本项目原创代码为 AGPL-3.0-or-later。PyMuPDF 系列采用 AGPL/商业双许可，参见[官方说明](https://pymupdf.readthedocs.io/en/latest/about.html)。模型权重的许可须单独检查。Docling代码为MIT、Pix2Text代码为MIT，但这些代码许可不自动覆盖各自全部模型，参见[Docling](https://github.com/docling-project/docling)、[Pix2Text](https://github.com/breezedeus/Pix2Text)。
